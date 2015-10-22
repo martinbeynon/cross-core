@@ -1,0 +1,14 @@
+# Description: Iana Etc - provides the /etc/services and /etc/protocols files
+# URL: http://sethwklein.net/iana-etc
+# License: Open Software License ("OSL") v. 3.0
+
+name=iana-etc
+version=2.30
+release=1
+source=(http://sethwklein.net/iana-etc-$version.tar.bz2)
+
+build () {
+	cd $name-$version
+
+	make DESTDIR=$PKG install
+}
